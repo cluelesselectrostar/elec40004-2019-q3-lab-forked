@@ -9,6 +9,6 @@ g++ spiral.cpp -o spiral
 ./spiral > spiral.got.svg
 
 diff house.got.svg house.ref.svg
-diff spiral.ref.svg
+diff spiral.got.svg spiral.ref.svg
 
 echo "Success"
