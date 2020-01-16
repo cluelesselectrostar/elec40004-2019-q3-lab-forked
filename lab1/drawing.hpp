@@ -20,10 +20,13 @@ struct Polygon
 
 struct Drawing
 {
+  
+private:
     float min_x, max_x;
     float min_y, max_y;
     vector<Polygon> shapes;
 
+public:
     Drawing()
     {
         //fDrawing *res=new Drawing;
