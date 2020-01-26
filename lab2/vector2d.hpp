@@ -48,13 +48,22 @@ vector2d operator*(const vector2d &a, float s)
 // Numeric values should be printed with exactly three decimal digits
 // of accuracy, in non-scientific format (i.e. no exponent). Whitespace
 // should not be inserted anywhere.
-ostream &operator<<(ostream &dst, const vector2d &a);
+ostream &operator<<(ostream &dst, const vector2d &a){
+    dst << fixed << std::setprecision(3) << "(" << a.x << "," << a.y << ")" << endl;
+    return dst;
+}
 
 // TODO: implement this so it reads a point into `a`.
 // This should match the format using when printing, and you can assume that
 // it is in the correct format. Note that whitespace _may_ appear before the
 // the opening '(' character, but not whitespace will appear between the
 // '(' and ')'
-istream &operator>>(istream &src, vector2d &a);
+istream &operator>>(istream &src, vector2d &a) {
+    cin.ignore(256, '('); //ignore until there is a "("
+    src >> a.x;
+    cin.ignore(256, ',');
+    src >> a.y;
+    cin.ignore(256, ')');
+};
 
 #endif
