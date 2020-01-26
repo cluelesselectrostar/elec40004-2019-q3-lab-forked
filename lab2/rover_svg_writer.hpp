@@ -1,5 +1,5 @@
-#ifndef rover_svg_hpp
-#define rover_svg_hpp
+#ifndef rover_svg_writer_hpp
+#define rover_svg_writer_hpp
 
 #include "rover.hpp"
 

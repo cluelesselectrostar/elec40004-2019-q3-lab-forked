@@ -1,8 +1,7 @@
-#ifndef rover_anim_hpp
-#define rover_anim_hpp
+#ifndef rover_action_writer_hpp
+#define rover_action_writer_hpp
 
 #include "rover.hpp"
-
 #include "rover_action.hpp"
 
 #include <cassert>
@@ -74,7 +73,7 @@ void Rover::advance_time(float dt)
     m_time += dt;
     m_position=pn;
 
-    // Diagnostic information being printed out. This goes to a 
+    // Diagnostic information being printed out. This goes to a
     // different place than cout, and is not part of the program output.
     cerr << "New position at " << m_time << " is " << m_position << endl;
 }
