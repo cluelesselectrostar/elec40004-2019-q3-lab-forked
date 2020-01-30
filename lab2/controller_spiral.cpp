@@ -1,6 +1,6 @@
 #include "rover.hpp"
 //#include "rover_svg_writer.hpp"
-#include "rover_action_writer.hpp"
+//#include "rover_action_writer.hpp"
 
 #include <cmath>
 

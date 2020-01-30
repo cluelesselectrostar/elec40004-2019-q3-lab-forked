@@ -2,6 +2,7 @@
 #define rover_hpp
 
 #include "vector2d.hpp"
+//#include "vector2d.cpp"
 
 class Rover
 {
@@ -21,14 +22,14 @@ public:
     // Gets the state of the rover at the current point in time
     float get_time() const;
     vector2d get_position() const;
-    
+
     float get_speed() const;
     float get_angle() const;
     bool get_pen_down() const;
 
     ////////////////////////////////////////
     // Modify the rover at the current time point
-    
+
     // Set the speed, measured in unit distance per second
     void set_speed(float speed);
 
