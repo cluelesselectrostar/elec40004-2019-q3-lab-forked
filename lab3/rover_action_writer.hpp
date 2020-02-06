@@ -5,7 +5,7 @@
 #include "vector2d.hpp"
 
 class RoverActionWriter
-  : public Rover
+  :public Rover
 {
 private:
     float m_time;

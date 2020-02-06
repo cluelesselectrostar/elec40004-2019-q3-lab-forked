@@ -1,10 +1,20 @@
-#include "rover_svg_writer.hpp"
+//#include "rover_svg_writer.hpp"
+#include "rover_factory.hpp"
 
 #include <cmath>
 #include <random>
 
 int main(int argc, const char **argv)
 {
+
+  string implementation;
+
+  if (argv[1]== NULL) {
+    implementation = "svg";
+  } else {
+    implementation = argv[1];
+  }
+
     // This object represents a random number generator
     mt19937 rng;
     rng.seed(time(0)); // Randomises based on the current time
@@ -14,8 +24,8 @@ int main(int argc, const char **argv)
 
     float PI=3.14159265;
 
-    RoverSVGWriter concrete_r;
-    Rover &r = concrete_r;
+    Rover *concrete_r = rover_factory(implementation);
+    Rover &r = *concrete_r;
 
     r.set_pen_down(true);
 

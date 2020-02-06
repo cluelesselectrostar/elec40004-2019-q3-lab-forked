@@ -1,11 +1,21 @@
-#include "rover_svg_writer.hpp"
+//#include "rover_svg_writer.hpp"
+#include "rover_factory.hpp"
 
 #include <cmath>
+#include <string>
 
 int main(int argc, const char **argv)
 {
-    RoverSVGWriter concrete_r;
-    Rover &r = concrete_r;
+  string implementation;
+
+  if (argv[1]== NULL) {
+    implementation = "svg";
+  } else {
+    implementation = argv[1];
+  }
+
+    Rover *concrete_r = rover_factory(implementation);
+    Rover &r = *concrete_r;
 
     r.set_angle(0);
     r.set_speed(1);
@@ -23,8 +33,8 @@ int main(int argc, const char **argv)
     float PI=3.141592653;
 
     int n=16;
-    if(argc>1){
-        n=atoi(argv[1]);
+    if(argc>2){
+        n=atoi(argv[2]);
     }
 
     float step = 2*sin(PI/n);
@@ -42,4 +52,6 @@ int main(int argc, const char **argv)
 
     r.set_pen_down(false);
     r.advance_time(1);
+
+    delete concrete_r;
 }
